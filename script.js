@@ -8,5 +8,24 @@ import { getUserIds } from "./storage.js";
 
 window.onload = function () {
   const users = getUserIds();
-  document.querySelector("body").innerText = `There are ${users.length} users`;
+  document.querySelector("#userCount").innerText = `There are ${users.length} users`;
+
+const userSelect = document.getElementById("users");
+
+const defaultOption = document.createElement("option");
+defaultOption.textContent = "Select a user";
+defaultOption.value = "";
+defaultOption.disabled = true;
+defaultOption.selected = true;
+
+userSelect.appendChild(defaultOption);
+
+users.forEach(user=>{
+  const option = document.createElement("option");
+  option.textContent = user;
+  option.value= user;
+  userSelect.appendChild(option);
+})
 };
+
+
