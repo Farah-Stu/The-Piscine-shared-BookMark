@@ -8,7 +8,9 @@ import { getUserIds } from "./storage.js";
 
 window.onload = function () {
   const users = getUserIds();
-  document.querySelector("userCount").innerText = `There are ${users.length} users`;
+  document.querySelector("#userCount").innerText = `There are ${users.length} users`;
 };
+
+const userSelect = document.getElementById("users");
 
 
